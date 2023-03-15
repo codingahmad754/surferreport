@@ -1,0 +1,30 @@
+body {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://images.unsplash.com/photo-1455264745730-cb3b76250ae8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2233&q=80");
+    background-size: cover;
+    background-position: center;
+    text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+}
+
+header {
+
+    display: flex;
+    justify-content: center;
+    color: azure;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    color: azure;
+}
+
+.center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -170px;
+    margin-left: -200px;
+}
