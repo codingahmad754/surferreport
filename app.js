@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: true }))
 
 
 
-app.get('/home', async (req, res) => {
+app.get('/', async (req, res) => {
     const axio = await axios.get("https://marine-api.open-meteo.com/v1/marine?latitude=32.85&longitude=-117.27&hourly=wave_height")
     const hourlyTime = axio.data.hourly.time.map(arr => {
         return arr.substr(5, 5) + ' ' + arr.substr(11, 5)
@@ -34,7 +34,7 @@ app.get('/home', async (req, res) => {
     // console.log(geoData.body.features[0].center)
 
 })
-app.post('/home', async (req, res) => {
+app.post('/', async (req, res) => {
     try {
         var { search } = req.body
         const arrCoor = await locate(search)
@@ -45,7 +45,7 @@ app.post('/home', async (req, res) => {
         const hourlyWaveHeight = axio.data.hourly.wave_height
         res.render('forecast', { hourlyTime, hourlyWaveHeight, search })
     } catch (e) {
-        res.send('<h1>Could not retrieve data for specified location</h1>')
+        res.send('<h1>Could not retrieve data for specified location </h1>')
     }
 })
 
